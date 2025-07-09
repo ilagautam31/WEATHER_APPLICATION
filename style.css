@@ -70,10 +70,12 @@ h1{
     margin:2rem auto;
 }
 .weathericon img {
-  width: 100px;
-  height: 100px;
   display: block;
-  margin: auto;
+  margin: 0 auto;
+  max-width: 100px;
+  height: auto;
+  filter: none;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 
