@@ -34,8 +34,9 @@ function findUserLocation() {
       console.log(data);
 
       city.innerHTML = data.name + ", " + data.sys.country;
-      const icon = entries[0].weather[0].icon.replace("n", "d");
-      document.getElementById("weatherImage").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
+      const iconCode = data.weather[0].icon.replace("n", "d");
+      console.log("Using icon code:", iconCode);
+      document.getElementById("weatherImage").src = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
       temperature.innerHTML = `${data.main.temp}°C`;
       feelslike.innerHTML = `Feels like ${data.main.feels_like}°C`;
       description.innerHTML = data.weather[0].description;
@@ -93,8 +94,7 @@ function findUserLocation() {
                 day: "numeric",
                 month: "short",
               }); // e.g., "9 Jul"
-
-              
+               const icon = entries[0].weather[0].icon.replace("n", "d");
               const description = entries[0].weather[0].description;
 
               // Calculate min/max temperature across all entries of the day
