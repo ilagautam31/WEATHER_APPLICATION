@@ -34,7 +34,7 @@ function findUserLocation() {
       console.log(data);
 
       city.innerHTML = data.name + ", " + data.sys.country;
-      weathericon.style.background = `url(https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png)`;
+      document.getElementById("weatherImage").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
       temperature.innerHTML = `${data.main.temp}°C`;
       feelslike.innerHTML = `Feels like ${data.main.feels_like}°C`;
       description.innerHTML = data.weather[0].description;

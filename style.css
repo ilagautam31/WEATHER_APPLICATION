@@ -69,6 +69,13 @@ h1{
     width:300px;
     margin:2rem auto;
 }
+.weathericon img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: auto;
+}
+
 
 .temperature {
   font-size: 48px;
