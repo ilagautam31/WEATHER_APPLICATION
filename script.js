@@ -17,10 +17,8 @@ const userLocation = document.getElementById("userLocation"),
 
 const WEATHER_API_ENDPOINT =
   `/api/weather?q=`;
-const WEATHER_DATA_ENDPOINT =
-  `https://api.openweathermap.org/data/2.5/onecall?appid=${API_KEY}&exclude=minutely&units=metric&`;
 const FORECAST_API_ENDPOINT =
-  `https://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}&units=metric&q=`;
+  `/api/forecast?q=`;
 
 function findUserLocation() {
   const location = userLocation.value;
