@@ -74,7 +74,18 @@ h1{
   height: 100px;
   display: block;
   margin: auto;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
 }
+.weathericon img:empty {
+  display: none;
+}
+
+#weatherImage:not([src]) {
+  display: none;
+}
+
 
 
 .temperature {
@@ -180,9 +191,11 @@ padding-bottom:10px;
     display:flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    overflow-x:hidden;
+    overflow-x:auto;
     padding:10px;
     gap:20px;
+    scroll-behavior: smooth;
+  scrollbar-width: none; 
 }
 .forecast-item {
   flex: 0 0 auto;
