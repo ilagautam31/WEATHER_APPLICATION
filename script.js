@@ -36,7 +36,7 @@ function findUserLocation() {
       city.innerHTML = data.name + ", " + data.sys.country;
       const iconCode = data.weather[0].icon.replace("n", "d");
       console.log("Using icon code:", iconCode);
-      document.getElementById("weatherImage").src = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+      document.getElementById("weatherImage").src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
       temperature.innerHTML = `${data.main.temp}°C`;
       feelslike.innerHTML = `Feels like ${data.main.feels_like}°C`;
       description.innerHTML = data.weather[0].description;
