@@ -15,10 +15,8 @@ const userLocation = document.getElementById("userLocation"),
   pvalue = document.getElementById("pvalue"),
   forecast = document.querySelector(".forecast");
 
-const WEATHER_API_ENDPOINT =
-  `/api/weather?q=`;
-const FORECAST_API_ENDPOINT =
-  `/api/forecast?q=`;
+const WEATHER_API_ENDPOINT = `/api/weather?q=`;
+const FORECAST_API_ENDPOINT = `/api/forecast?q=`;
 
 function findUserLocation() {
   const location = userLocation.value;
@@ -34,9 +32,13 @@ function findUserLocation() {
       console.log(data);
 
       city.innerHTML = data.name + ", " + data.sys.country;
+      const iconDiv = document.getElementById("weatherImage");
       const iconCode = data.weather[0].icon.replace("n", "d");
       console.log("Using icon code:", iconCode);
-      document.getElementById("weatherImage").src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+      iconDiv.style.backgroundImage = `url(https://openweathermap.org/img/wn/${iconCode}@2x.png)`;
+      iconDiv.style.display = "block";
+
       temperature.innerHTML = `${data.main.temp}°C`;
       feelslike.innerHTML = `Feels like ${data.main.feels_like}°C`;
       description.innerHTML = data.weather[0].description;
@@ -94,7 +96,7 @@ function findUserLocation() {
                 day: "numeric",
                 month: "short",
               }); // e.g., "9 Jul"
-               const icon = entries[0].weather[0].icon.replace("n", "d");
+              const icon = entries[0].weather[0].icon.replace("n", "d");
               const description = entries[0].weather[0].description;
 
               // Calculate min/max temperature across all entries of the day
